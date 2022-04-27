@@ -1,4 +1,4 @@
-import { db } from "../data/db.js";
+
 
 export const Query = {
     hello: (parent, args, context, info) => {
@@ -14,28 +14,28 @@ export const Query = {
             firstname: 'Aymen'
         }
     },
-    getAllStudents: () => {
+    getAllStudents: (parent, args, { db }, info) => {
         return db.students;
     },
-    getStudent: (_, {id}) => {
+    getStudent: (_, {id},{ db }, info) => {
         return db.students.find(
             (student) => student.id == id
         );
     },
-    getTodos: () => {
+    getTodos: (parent, args, { db }, info) => {
         return db.todos;
       },
-    getTodoById: (parent, { id }, context, info) => {
+    getTodoById: (parent, { id }, { db }, info) => {
         const todo = db.todos.find((todo) => todo.id === id);
         if (!todo) {
           throw new Error(`Le todo d'id ${id} n'existe pas`);
         }
         return todo;
       },
-    getUsers: (parent, args, context, info) => {
+    getUsers: (parent, args, { db }, info) => {
         return db.users;
       },
-    getUserById: (parent, { id }, context, info) => {
+    getUserById: (parent, { id }, { db }, info) => {
         const user = db.users.find((user) => user.id === id);
         if (!user) {
           throw new Error(`Le user d'id ${id} n'existe pas`);
