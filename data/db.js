@@ -40,5 +40,40 @@ export const db = {
             id: 3,
             designation: 'GL4'
         },
-    ]
+    ],
+    todos: [
+        {
+          id: 1,
+          name: "diapo p39",
+          content: "deinir un type TODO ",
+          status: "DONE",
+          userId: 1
+        },
+        {
+          id: 2,
+          name: "diapo p57",
+          content: "recuperer Todo par son id",
+          status: "DONE",
+          userId: 1
+        },
+        {
+            id: 3,
+            name: "diapo p71",
+            content: "créer un user en relation avec Todo",
+            status: "DONE",
+            userId: 1
+          },
+      ],
+      users: [
+        {
+          id: 1,
+          name: 'skander',
+          email: 'skander@gmail.com'
+        },
+        {
+          id: 2,
+          name: 'farouk',
+          email: 'farouk@gmail.com'
+        }
+      ]
 }
